@@ -1,14 +1,11 @@
 import { Button, Form, Input } from 'antd'
 import React, { FC, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { useActions } from '../hooks/useActions'
 import { useTypedSelector } from '../hooks/useTypedSelector'
-import { AuthActionCreators } from '../store/reducers/auth/action-creators'
 import { rules } from '../utils/rules'
 
 const LoginForm:FC = () => {
-  const dispatch  = useDispatch()
-  const { error, isLoading, isAuth} = useTypedSelector(state => state.auth);
+  const { error, isLoading} = useTypedSelector(state => state.auth);
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const {login} = useActions()
@@ -19,7 +16,6 @@ const LoginForm:FC = () => {
   return (
     <Form
     onFinish={submit}
-      // onFinishFailed={onFinishFailed}
     >
       {error && <div style={{color: 'red'}}>
         {error}

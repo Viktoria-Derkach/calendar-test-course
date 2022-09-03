@@ -1,4 +1,4 @@
-import { Badge, BadgeProps, Calendar } from 'antd';
+import { Badge, Calendar } from 'antd';
 import type { CalendarMode } from 'antd/es/calendar/generateCalendar';
 import type { Moment } from 'moment';
 import React, { FC } from 'react';
@@ -8,12 +8,6 @@ import { formatDate } from '../utils/date';
 interface EventCalendarProps {
  events: IEvent[];
 }
-
-const getMonthData = (value: Moment) => {
-  if (value.month() === 8) {
-    return 1394;
-  }
-};
 
 const EventCalendar: FC<EventCalendarProps> = (props) => {
   const onPanelChange = (value: Moment, mode: CalendarMode) => {

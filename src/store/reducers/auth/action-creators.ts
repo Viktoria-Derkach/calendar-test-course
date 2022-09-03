@@ -1,4 +1,3 @@
-import axios from "axios";
 import { AppDispatch } from "../../index";
 import { IUser } from "../../../models/IUser";
 import { AuthActionEnum, SetAuthAction, SetErrorAction, SetIsLoadingAction, SetUserAction } from "./types";
